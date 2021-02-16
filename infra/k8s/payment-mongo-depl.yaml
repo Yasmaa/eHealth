@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-mongo
+  template:
+    metadata:
+      labels:
+        app: payment-mongo
+    spec:
+      volumes:
+        - name: mongo-payment-storage
+          persistentVolumeClaim:
+            claimName: payment-persistent-volume-claim
+      containers:
+        - name: payment-mongo
+          image: mongo
+          volumeMounts:
+            - name: mongo-payment-storage
+              mountPath: /data/db
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: payment-persistent-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-mongo-srv
+spec:
+  selector:
+    app: payment-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

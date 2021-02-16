@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rdv-mongo-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rdv-mongo
+  template:
+    metadata:
+      labels:
+        app: rdv-mongo
+    spec:
+      volumes:
+        - name: mongo-rdv-storage
+          persistentVolumeClaim:
+            claimName: rdv-persistent-volume-claim
+      containers:
+        - name: rdv-mongo
+          image: mongo
+          volumeMounts:
+            - name: mongo-rdv-storage
+              mountPath: /data/db
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rdv-persistent-volume-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rdv-mongo-srv
+spec:
+  selector:
+    app: rdv-mongo
+  ports:
+    - name: db
+      protocol: TCP
+      port: 27017
+      targetPort: 27017

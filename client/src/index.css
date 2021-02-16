@@ -1,0 +1,162 @@
+/* Landing Page */
+.landing {
+  position: relative;
+  background: url('./img/doctors.jpg') no-repeat center center/cover;
+  height: 40rem;
+  padding-top: 200px;
+}
+
+.about {
+  position: relative;
+  background: url('./img/about.jpg') no-repeat center center/cover;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  width: 450px;
+  height: 327px;
+}
+
+.apropos {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.landing-inner {
+  color: #fff;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Services Section */
+#services {
+  padding: 50px 0;
+  background: linear-gradient(to right, #343a40 0%, #55595c 100%);
+  color: #fff;
+}
+#services .service-desc {
+  margin: 10px 10px 20px;
+}
+#services h5 {
+  color: #fff;
+}
+#services .section-title h2::after {
+  position: absolute;
+  content: '';
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  width: 60px;
+  bottom: 0;
+  margin-left: -30px;
+  left: 50%;
+}
+#services i.fa {
+  font-size: 42px;
+  width: 120px;
+  height: 120px;
+  padding: 40px 0;
+  background: linear-gradient(to right, #343a40 0%, #55595c 100%);
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+}
+#services h3 {
+  font-weight: 500;
+  padding: 5px 0;
+  color: #fff;
+}
+#services p {
+  color: rgba(255, 255, 255, 0.75);
+}
+#services .service-desc {
+  margin-bottom: 40px;
+}
+
+/* */
+
+main {
+  min-height: 80vh;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1.5rem 0;
+}
+
+h2 {
+  font-size: 1.23rem;
+  padding: 0.5rem 0;
+}
+
+h3 {
+  padding: 1rem 0;
+}
+
+h4 {
+  padding: 1rem 0;
+}
+
+.rating span {
+  margin: 0.09rem;
+}
+
+.map-doctor-profile {
+  width: 60vw;
+  height: 60vh;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.map-doctor-info {
+  width: 50vw;
+  height: 60vh;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.map-pin {
+  font-size: 2rem;
+  color: darkred;
+}
+
+.location-info {
+  position: absolute;
+  top: -100px;
+  right: 10px;
+  width: 450px;
+  min-height: 200px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}
+
+.image-profile {
+  padding-bottom: 5px;
+}
+
+.steps {
+  padding-bottom: 10px;
+}
+
+.doctor {
+  margin-left: 10px;
+}
+
+.card-title {
+  padding-top: 10px;
+}
