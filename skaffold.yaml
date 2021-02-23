@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: iliassanati/auth
+    - image: ilia/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    - image: iliassanati/client
+    - image: ilia/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: iliassanati/doctor
+    - image: ilia/doctor
       context: doctor
       docker:
         dockerfile: Dockerfile
@@ -32,7 +32,7 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    - image: iliassanati/rdv
+    - image: ilia/rdv
       context: rdv
       docker:
         dockerfile: Dockerfile
@@ -40,7 +40,7 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    - image: iliassanati/expiration
+    - image: ilia/expiration
       context: expiration
       docker:
         dockerfile: Dockerfile
@@ -48,7 +48,7 @@ build:
         manual:
           - src: 'src/**/*.js'
             dest: .
-    - image: iliassanati/payment
+    - image: ilia/payment
       context: payment
       docker:
         dockerfile: Dockerfile
